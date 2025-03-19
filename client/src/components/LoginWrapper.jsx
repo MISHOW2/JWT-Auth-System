@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import '../styles/login.css';
-import { google } from '../assets/icons/icons';
 import { signup, login } from '../api/authServices';
-import { useNavigate } from "react-router-dom";
+import AuthContext from '../context/authContext';
+import { useNavigate } from 'react-router-dom';
+
 
 function LoginWrapper() {
   const [isLogin, setIsLogin] = useState(true);
@@ -12,8 +13,9 @@ function LoginWrapper() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null); 
+  const {setUser} = useContext(AuthContext)
+  
   const navigate = useNavigate();
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
@@ -32,15 +34,10 @@ function LoginWrapper() {
     try {
       if (isLogin) {
         const response = await login(email, password);
+        setUser({email})
         console.log("Login successful:", response);
-
-        if (document.getElementById("rememberMe").checked) {
-          localStorage.setItem("email", email);
-        } else {
-          localStorage.removeItem("email");
-        }
-
-        navigate("/dashboard");
+       navigate('/dashboard')
+       
       } else {
         await signup(fullName, email, password);
         setSuccess("Signup successful! Redirecting to login...");
@@ -56,17 +53,13 @@ function LoginWrapper() {
     }
   };
 
- 
 
  
-
   return (
     <form className="login-form" onSubmit={handleSubmit}>
       {error && <p className="error-message">{error}</p>}
       {success && <p className="success-message">{success}</p>} 
 
-     
-      <p className="divider-text">or</p>
 
       {!isLogin && (
         <div className="input-container">

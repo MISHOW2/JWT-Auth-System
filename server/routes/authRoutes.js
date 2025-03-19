@@ -10,7 +10,7 @@ router.use(validateResult)
 router.post('/signup' ,signup);
 
 // Login Route
-router.post('/login',signup );
+router.post('/login',login );
 
 
 module.exports = router;
