@@ -1,0 +1,269 @@
+/* General Styles */
+
+/* App Title */
+.app-title {
+  color: #1F9BF3;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: start;
+}
+
+/* Main Container */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Google Login Button */
+.google-login-btn {
+  display: flex;
+  gap: 40px;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.google-login-btn img {
+  width: 30px;
+}
+
+/* Login Wrapper */
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* Login Form */
+.login-form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
+/* Google Login Button */
+.google-login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: white;
+  height: 42px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+}
+
+.google-login-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Divider Text */
+.divider-text {
+  margin: 10px 0;
+  color: #666;
+}
+
+/* Input Fields */
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+.input-label {
+  position: absolute;
+  top: -12px;
+  left: 10px;
+  font-size: 14px;
+  color: #666;
+  background: white;
+  padding: 0 5px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px 10px 10px 40px; /* Ensure space for the icon */
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+}
+
+/* Remember Me */
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+/* Login Button */
+.login-btn {
+  background: #525B67;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+  background: #0056b3;
+}
+
+/* Features Section */
+.features-section {
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+  width: 50%;
+  padding-left: 20px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.feature-container {
+  display: flex;
+  gap: 20px;
+  align-items: top;
+}
+
+.feature-icon {
+  width: 40px;
+  height: 40px;
+}
+.feature-title {
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.feature-description {
+  font-size: 12px;
+  color: hsla(0, 0%, 0%, 0.83);
+}
+
+span {
+  color: #007bff;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+span:hover {
+  color: #1F9BF3;
+}
+
+.forgot-password {
+  text-align: left;
+  font-size: 14px;
+  color: #1F9BF3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-wrapper {
+    flex-direction: column;
+    box-shadow: none;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .features-section {
+    width: 100%;
+  
+    padding: 10px;
+    gap: 40px;
+  }
+
+  .login-form {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .google-login-btn {
+    font-size: 14px;
+    gap: 20px;
+  }
+
+  .login-btn {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  /* Adjust App Title */
+  .app-title {
+    font-size: 24px;
+  }
+
+  /* Adjust Input Fields */
+  .input-field {
+    padding: 12px 10px 12px 40px;
+    font-size: 16px;
+  }
+
+  /* Adjust Login Button */
+  .login-btn {
+    padding: 12px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further small screen adjustments */
+  .login-container {
+    padding: 10px;
+  }
+
+  .google-login-btn {
+    width: 100%;
+  }
+
+  .input-container {
+    max-width: 100%;
+  }
+
+  .input-field {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .login-btn {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
