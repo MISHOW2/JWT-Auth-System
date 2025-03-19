@@ -29,10 +29,12 @@ router.post('/signup', validateResult, async (req, res) => {
     });
 
     const token = await JWT.sign({
-      
+      email
+    },process.env.SECRET,{
+      expiresIn: '1h'
     })
     // Respond with a success message
-    res.status(201).json({ message: `Welcome ${email}` });
+    res.status(201).json({ message: `Welcome ${email}`,token:token });
   } catch (error) {
     console.error('Error hashing password:', error);
     res.status(500).json({ Error: 'Internal server error' });
